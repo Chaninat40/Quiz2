@@ -15,6 +15,9 @@ app.use(logger);
 app.use(express.static('www'))   /*ตัวช่วยในการดึงค่าให้แสดงเอาพุดจากโฟล์เดอร์ www*/
 app.get('/users', users.findAll)
 
+app.get('/users/roles/:role',users.role);
+app.get('/users/search',users.search);
+
 
 app.listen(3000);
 console.log('Server is running at http://localhost:3000');
