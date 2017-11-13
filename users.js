@@ -41,7 +41,7 @@ function role(req, res) {
     console.log(fname);
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
-        var query = { role: new RegExp('.*' + fname + '.*') };
+        var query = { first_name: new RegExp('.*' + fname + '.*') };
         console.log(query);
         db.collection("users").find(query).toArray(function (err, result) {
             if (err) throw err;
