@@ -30,7 +30,6 @@ function search(req, res) {
         db.collection("users").find(query).toArray(function (err, result) {
             if (err) throw err;
             console.log(result);
-            db.close();
             res.json(result);
         });
     });
@@ -41,19 +40,37 @@ function role(req, res) {
     console.log(fname);
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
-        var query = { first_name: new RegExp('.*' + fname + '.*') };
+        var query = { role: new RegExp('.*' + fname + '.*') };
         console.log(query);
         db.collection("users").find(query).toArray(function (err, result) {
             if (err) throw err;
             console.log(result);
-            db.close();
             res.json(result);
         });
     });
 }
 
+function expired(req, res) {
+    var expired= req.params.expired; 
+    var query; 
+    if(expired=="true") {
+        query={expired:true};
+    }
+    else{
+        query={expired:false};
+    }     
+    db.collection("users").find(query).toArray(function (err, result) {
+            if (err) throw err;
+            console.log(result);            
+            res.json(result);
+    });    
+}
+
+
+
 module.exports = {
     findAll: findAll,
     search: search,
-    role : role
+    role : role,
+    expired :  expired
 };

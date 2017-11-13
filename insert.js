@@ -6,7 +6,7 @@ MongoClient.connect(url, function(err, db) {
   var myobj = [
     {
         "id": 1,"first_name": "Peter","address": "Highway 71",
-        "expired": false,"role": "user"
+        "expired": true,"role": "user"
     },
     {
         "id": 2,"first_name": "Amy","address": "Lowstreet 4",

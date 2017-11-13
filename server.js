@@ -15,8 +15,9 @@ app.use(logger);
 app.use(express.static('www'))   /*ตัวช่วยในการดึงค่าให้แสดงเอาพุดจากโฟล์เดอร์ www*/
 app.get('/users', users.findAll)
 
-app.get('/users/role/:role',users.role);
+app.get('/users/roles/:role',users.role);
 app.get('/users/search',users.search);
+app.get('/users/expired/:expired',users.expired);
 
 
 app.listen(3000);
