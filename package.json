@@ -1,15 +1,27 @@
 {
-  "name": "Quiz2_MongoDB",
+  "name": "Quiz2",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "insert.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chaninat40/Quiz2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "mongodb": "^2.2.33"
-  }
+  "bugs": {
+    "url": "https://github.com/Chaninat40/Quiz2/issues"
+  },
+  "homepage": "https://github.com/Chaninat40/Quiz2#readme",
+  "description": ""
 }
